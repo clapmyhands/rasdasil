@@ -82,8 +82,10 @@ preview:
     enableKatex: true
     automaticallyShowPreview: false
 publishing:
-    siteUrl: https://clapmyhands.com/
+    siteUrl: https://clapmyhands.com/rasdasil
     siteRootDir: docs
+    siteFaviconPath: ./assets/icons/clap.svg
+    logoPath: ./assets/icons/clap.svg
 
     seo:
         title: Rasdasil
