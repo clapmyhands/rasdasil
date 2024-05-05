@@ -1,0 +1,23 @@
+{
+    "editor.minimap.enabled": false,
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "files.defaultLanguage": "markdown",
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "files.watcherExclude": {
+        "**/node_modules": true
+    },
+    "foam.edit.linkReferenceDefinitions": "withExtensions",
+    "pasteImage.path": "${projectRoot}/docs/attachments",
+    "pasteImage.showFilePathConfirmInputBox": true,
+    "markdown.extension.toc.slugifyMode": "github",
+    "markdown.extension.toc.levels": "2..6"
+}

@@ -1,0 +1,8 @@
+{
+    "MD033": {
+        "allowed_elements": ["left", "right", "center"]
+    },
+    "MD013": {
+        "line_length": 144
+    }
+}
