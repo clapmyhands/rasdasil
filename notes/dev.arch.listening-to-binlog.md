@@ -1,6 +1,9 @@
 ---
+id: aysqmsuilhf1t5iuu3ehw9v
 title: Listening to Binlog
-type: knowledge
+desc: ''
+updated: 1714895188515
+created: 1714895188515
 tags: event-stream database compsci
 ---
 

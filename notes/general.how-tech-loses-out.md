@@ -1,6 +1,9 @@
 ---
+id: 4me1wf4gp711vndjyvmlkde
 title: How Tech Loses Out
-type: article
+desc: ''
+updated: 1714895142532
+created: 1714895142532
 tags: innovation company
 ---
 

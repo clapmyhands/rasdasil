@@ -1,6 +1,9 @@
 ---
+id: 3rytff48a9enp0k6zwusrgx
 title: Hexagonal Architecture
-type: article
+desc: ''
+updated: 1714895188512
+created: 1714895188512
 tags: architecture compsci
 ---
 

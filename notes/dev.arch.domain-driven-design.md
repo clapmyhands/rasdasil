@@ -1,6 +1,9 @@
 ---
+id: vwiosyml0ir2kjj21vqn6wa
 title: Domain Driven Design
-type: article
+desc: ''
+updated: 1714895188509
+created: 1714895188509
 tags: architecture compsci
 ---
 

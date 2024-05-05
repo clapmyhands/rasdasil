@@ -1,7 +1,10 @@
 ---
+id: sjdfkeudd654lu8lteinnoe
 title: Cache
-type: article
-tags: cache usage-pattern compsci
+desc: ''
+updated: 1714895448746
+created: 1714895171671
+tags: cache
 ---
 
 ## Usage Pattern
