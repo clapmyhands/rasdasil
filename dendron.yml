@@ -84,8 +84,8 @@ preview:
 publishing:
     siteUrl: https://clapmyhands.com/rasdasil
     siteRootDir: docs
-    siteFaviconPath: notes/assets/icons/favicon.ico
-    logoPath: notes/assets/icons/clap.svg
+    siteFaviconPath: ./assets/icons/favicon.ico
+    logoPath: ./assets/icons/clap.svg
     seo:
         title: Rasdasil
         description: Source of all magic
