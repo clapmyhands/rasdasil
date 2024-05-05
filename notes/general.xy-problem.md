@@ -2,8 +2,9 @@
 id: 1f6hytu8x2fk51s4ulmzyvx
 title: XY Problem
 desc: ''
-updated: 1714916661283
+updated: 1714920504062
 created: 1714895188517
+tags: communication
 ---
 
 Time and time again throughout my career so far, I've met people that does not know how to ask questions properly. Just to be clear, this includes myself, in more than one occassion.

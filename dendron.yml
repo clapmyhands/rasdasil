@@ -84,13 +84,11 @@ preview:
 publishing:
     siteUrl: https://clapmyhands.com/rasdasil
     siteRootDir: docs
-    siteFaviconPath: ./assets/icons/clap.svg
-    logoPath: ./assets/icons/clap.svg
-
+    siteFaviconPath: notes/assets/icons/favicon.ico
+    logoPath: notes/assets/icons/clap.svg
     seo:
         title: Rasdasil
         description: Source of all magic
-
     enableFMTitle: true
     enableNoteTitleForLink: true
     enablePrettyRefs: true
@@ -101,9 +99,6 @@ publishing:
     writeStubs: false
     github:
         enableEditLink: false
-        editLinkText: Edit this page on GitHub
-        editBranch: main
-        editViewMode: tree
     enableSiteLastModified: true
     enableFrontmatterTags: true
     enableHashesForFMTags: false
