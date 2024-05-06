@@ -1,0 +1,82 @@
+<h1 id="flaky-tests">Flaky Tests<a aria-hidden="true" class="anchor-heading icon-link" href="#flaky-tests"></a></h1>
+<p><a href="https://samsaffron.com/archive/2019/05/15/tests-that-sometimes-fail">Tests that sometimes fail - flaky test tips</a></p>
+<ul>
+<li><a href="#1-definition">1. Definition</a></li>
+<li><a href="#2-background">2. Background</a></li>
+<li><a href="#3-several-pattern-of-flakiness">3. Several pattern of Flakiness</a>
+<ul>
+<li><a href="#31-hard-coded-id">3.1. Hard coded id</a></li>
+<li><a href="#32-random-data">3.2. Random data</a></li>
+<li><a href="#33-database-execution-ordering-assumptions">3.3. Database execution ordering assumptions</a></li>
+<li><a href="#34-time-assumptions">3.4. Time assumptions</a></li>
+<li><a href="#35-concurrency">3.5. Concurrency</a></li>
+<li><a href="#36-leaky-global-state">3.6. Leaky global state</a></li>
+<li><a href="#37-assumptions-about-environment">3.7. Assumptions about environment</a></li>
+</ul>
+</li>
+<li><a href="#4-how-to-handle-flaky-test">4. How to handle Flaky test</a></li>
+</ul>
+<h2 id="1-definition">1. Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#1-definition"></a></h2>
+<p>Sometimes when tests are written, they might become test that fails intermittently. These are called flaky test or heisentest (in relation to <a href="https://en.wikipedia.org/wiki/Heisenbug">heisenbug</a>)</p>
+<h2 id="2-background">2. Background<a aria-hidden="true" class="anchor-heading icon-link" href="#2-background"></a></h2>
+<p>Flaky test incurs cost not only in time spent on the pipeline, but also on developer's time.
+Hence it is crucial that we either remove flakiness or fix it.
+Fixing flaky tests might also result in fixing an actual bug hidden inside the code.</p>
+<h2 id="3-several-pattern-of-flakiness">3. Several pattern of Flakiness<a aria-hidden="true" class="anchor-heading icon-link" href="#3-several-pattern-of-flakiness"></a></h2>
+<h3 id="31-hard-coded-id">3.1. Hard coded id<a aria-hidden="true" class="anchor-heading icon-link" href="#31-hard-coded-id"></a></h3>
+<p>When using database with auto increment ids, sometimes its easier for us to simply assign id and check whether it is equal to some hard coded id.
+This can be further generalized as any hardcoded assumptions.
+TODO: reread and fix this part</p>
+<h3 id="32-random-data">3.2. Random data<a aria-hidden="true" class="anchor-heading icon-link" href="#32-random-data"></a></h3>
+<p>some unexpected data/input can expose a bug or a wrong assumption deep inside the code.
+This is how Fuzzy testing (or commonly known as <a href="https://en.wikipedia.org/wiki/Fuzzing">Fuzzing</a> come to be.
+Fuzzy testing work by generating random data with some restriction which is used to hit the system.</p>
+<h3 id="33-database-execution-ordering-assumptions">3.3. Database execution ordering assumptions<a aria-hidden="true" class="anchor-heading icon-link" href="#33-database-execution-ordering-assumptions"></a></h3>
+<p>this is related to point 1 in that order should not be assumed unless explicitly ordered by the developer (no pun intended)</p>
+<h3 id="34-time-assumptions">3.4. Time assumptions<a aria-hidden="true" class="anchor-heading icon-link" href="#34-time-assumptions"></a></h3>
+<p>Time is one of those things that we don't usually think about testing for/about; because, how can Time fail?
+However, code that is basing its logic on time can fail and code should be designed to be easily testable even against time.</p>
+<p>Related to this is places where we use time.Sleep to wait on some asynchronous or background processing.
+This is a typical flaky smell; not only does this make your test take longer, it's also implicit on what it's waiting for.
+If the code needs to take some specific amount of time, then it should be explicit.
+Otherwise, Test should not rely on sleep to wait on some correct state.
+Instead, use polling or some explicit way to sync the state.
+Possibly by calling a function and processing it synchronously instead of waiting on some state to be true.</p>
+<h3 id="35-concurrency">3.5. Concurrency<a aria-hidden="true" class="anchor-heading icon-link" href="#35-concurrency"></a></h3>
+<p>Semi-related to <a href="#time-assumptions">time assumptions</a>.
+If we use background processing in test, it could result race condition.
+Especially if tests are run in parallel.</p>
+<h3 id="36-leaky-global-state">3.6. Leaky global state<a aria-hidden="true" class="anchor-heading icon-link" href="#36-leaky-global-state"></a></h3>
+<p>Sometimes tests modifies some global state.
+Unless the test suite are reset to a pristine state, there can be some modified global state between tests.
+This would result in some condition being true only if tests are run in certain order.
+Hence why tests should always be run in random order.</p>
+<h3 id="37-assumptions-about-environment">3.7. Assumptions about environment<a aria-hidden="true" class="anchor-heading icon-link" href="#37-assumptions-about-environment"></a></h3>
+<p>Remember that in the end your code are not only running locally.
+It is also tested locally, in CI/CD pipeline, and running in production.
+It is hard to make sure the condition is always the same (even if you use container).
+There will be small differences here and there and thats why you should challenge your assumptions.
+TODO: reread this part and fix</p>
+<h2 id="4-how-to-handle-flaky-test">4. How to handle Flaky test<a aria-hidden="true" class="anchor-heading icon-link" href="#4-how-to-handle-flaky-test"></a></h2>
+<p>Handling flaky test should be a team effort.
+Assign flaky test to original test writer to fix, and give post mortem on how it come to be.
+Treat it like an incident and figure out the root cause.</p>
+<p>Below are several points on how to work as a team to reduce flakiness:</p>
+<ol>
+<li>Should be a team concern
+It should be a team decision to either remove, run repeatedly, ignore, or invest time to find cause and fix</li>
+<li>Stopping deployment if any test failed
+Depends on urgency, when deployment timeline is tight, test can be quarantined/excluded temporarily</li>
+<li>Run test in random order</li>
+<li>Invest in making tests run faster
+Tighter loop means it can be run faster on a loop and flaky test are found faster</li>
+<li>Regularly run test suite
+This can be done in asynchronous manner to actual code change to prod.
+Very rare flaky test can be found if your test suite are fast and you're running it endlessly (even if say chance of happening is 1/xxxxx)</li>
+<li>Add log in unexpected flaky case</li>
+</ol>
+<hr>
+<h2 id="tags">Tags<a aria-hidden="true" class="anchor-heading icon-link" href="#tags"></a></h2>
+<ol>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">testing flaky-test (Private)</a></li>
+</ol>

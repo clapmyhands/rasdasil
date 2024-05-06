@@ -1,0 +1,174 @@
+{
+  "roots": [
+    {
+      "key": "d2lwvt1chldt9iyak0awfp0",
+      "title": "Dev",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "rasdasil",
+      "children": [
+        {
+          "key": "czx21auqpkaszdm4iqd87m9",
+          "title": "Arch",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "rasdasil",
+          "children": [
+            {
+              "key": "vwiosyml0ir2kjj21vqn6wa",
+              "title": "Domain Driven Design",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "rasdasil",
+              "children": []
+            },
+            {
+              "key": "3rytff48a9enp0k6zwusrgx",
+              "title": "Hexagonal Architecture",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "rasdasil",
+              "children": []
+            },
+            {
+              "key": "aysqmsuilhf1t5iuu3ehw9v",
+              "title": "Listening to Binlog",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "rasdasil",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "sjdfkeudd654lu8lteinnoe",
+          "title": "Cache",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "rasdasil",
+          "children": []
+        },
+        {
+          "key": "o8fs96wnx5b8ousc44s7xx0",
+          "title": "Ds",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "rasdasil",
+          "children": [
+            {
+              "key": "e225ax568ze2hr4f6ujqukl",
+              "title": "Heap Vs Redblack Tree",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "rasdasil",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "nvpp9h448o76hbub51wpj51",
+          "title": "Test",
+          "icon": "plusOutlined",
+          "hasTitleNumberOutlined": false,
+          "vaultName": "rasdasil",
+          "children": [
+            {
+              "key": "lnzw89w69exbqm9xtuhq9lg",
+              "title": "Flaky Tests",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "rasdasil",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "0pazmimivyireeg82859u4b",
+      "title": "General",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "rasdasil",
+      "children": [
+        {
+          "key": "4me1wf4gp711vndjyvmlkde",
+          "title": "How Tech Loses Out",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "rasdasil",
+          "children": []
+        },
+        {
+          "key": "1f6hytu8x2fk51s4ulmzyvx",
+          "title": "XY Problem",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "rasdasil",
+          "children": []
+        }
+      ]
+    },
+    {
+      "key": "j9kbep13svebngbnucq27nr",
+      "title": "Random",
+      "icon": "plusOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "rasdasil",
+      "children": [
+        {
+          "key": "89agvkg9v94lttz4pq7e7cl",
+          "title": "Coastal Defence on Flood Risk",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "rasdasil",
+          "children": []
+        }
+      ]
+    },
+    {
+      "key": "sklxf5e2tb2lo3aorpr5m1e",
+      "title": "To be sorted",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "rasdasil",
+      "children": []
+    }
+  ],
+  "child2parent": {
+    "d2lwvt1chldt9iyak0awfp0": null,
+    "czx21auqpkaszdm4iqd87m9": "d2lwvt1chldt9iyak0awfp0",
+    "vwiosyml0ir2kjj21vqn6wa": "czx21auqpkaszdm4iqd87m9",
+    "3rytff48a9enp0k6zwusrgx": "czx21auqpkaszdm4iqd87m9",
+    "aysqmsuilhf1t5iuu3ehw9v": "czx21auqpkaszdm4iqd87m9",
+    "sjdfkeudd654lu8lteinnoe": "d2lwvt1chldt9iyak0awfp0",
+    "o8fs96wnx5b8ousc44s7xx0": "d2lwvt1chldt9iyak0awfp0",
+    "e225ax568ze2hr4f6ujqukl": "o8fs96wnx5b8ousc44s7xx0",
+    "nvpp9h448o76hbub51wpj51": "d2lwvt1chldt9iyak0awfp0",
+    "lnzw89w69exbqm9xtuhq9lg": "nvpp9h448o76hbub51wpj51",
+    "0pazmimivyireeg82859u4b": null,
+    "4me1wf4gp711vndjyvmlkde": "0pazmimivyireeg82859u4b",
+    "1f6hytu8x2fk51s4ulmzyvx": "0pazmimivyireeg82859u4b",
+    "j9kbep13svebngbnucq27nr": null,
+    "89agvkg9v94lttz4pq7e7cl": "j9kbep13svebngbnucq27nr",
+    "sklxf5e2tb2lo3aorpr5m1e": null
+  },
+  "notesLabelById": {
+    "d2lwvt1chldt9iyak0awfp0": "Dev",
+    "czx21auqpkaszdm4iqd87m9": "Arch",
+    "vwiosyml0ir2kjj21vqn6wa": "Domain Driven Design",
+    "3rytff48a9enp0k6zwusrgx": "Hexagonal Architecture",
+    "aysqmsuilhf1t5iuu3ehw9v": "Listening to Binlog",
+    "sjdfkeudd654lu8lteinnoe": "Cache",
+    "o8fs96wnx5b8ousc44s7xx0": "Ds",
+    "e225ax568ze2hr4f6ujqukl": "Heap Vs Redblack Tree",
+    "nvpp9h448o76hbub51wpj51": "Test",
+    "lnzw89w69exbqm9xtuhq9lg": "Flaky Tests",
+    "0pazmimivyireeg82859u4b": "General",
+    "4me1wf4gp711vndjyvmlkde": "How Tech Loses Out",
+    "1f6hytu8x2fk51s4ulmzyvx": "XY Problem",
+    "j9kbep13svebngbnucq27nr": "Random",
+    "89agvkg9v94lttz4pq7e7cl": "Coastal Defence on Flood Risk",
+    "sklxf5e2tb2lo3aorpr5m1e": "To be sorted"
+  }
+}
